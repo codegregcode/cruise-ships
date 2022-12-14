@@ -1,0 +1,22 @@
+{
+  "name": "cruise-ships",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codegregcode/cruise-ships.git"
+  },
+  "author": "Greg Cain",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codegregcode/cruise-ships/issues"
+  },
+  "homepage": "https://github.com/codegregcode/cruise-ships#readme",
+  "devDependencies": {
+    "jest": "^29.3.1"
+  }
+}
