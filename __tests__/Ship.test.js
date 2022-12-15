@@ -9,8 +9,18 @@ describe('Ship', () => {
         let itinerary;
         let ship;
         beforeEach(() => {
-            plymouth = new Port('Plymouth');
-            topsham = new Port('Topsham');
+            plymouth = {
+                addShip: jest.fn(),
+                removeShip: jest.fn(),
+                name: 'Plymouth',
+                ships: []
+            };
+            topsham = {
+                addShip: jest.fn(),
+                removeShip: jest.fn(),
+                name: 'Topsham',
+                ships: []
+            };;
             itinerary = new Itinerary([plymouth, topsham]);
             ship = new Ship(itinerary);
     });
@@ -23,10 +33,10 @@ describe('Ship', () => {
         it('can set sail', () => {
             ship.setSail();
             expect(ship.currentPort).toBeFalsy();
-            expect(plymouth.ships).not.toContain(ship);
+            expect(plymouth.removeShip).toHaveBeenCalledWith(ship);
         });
         it('gets added to port on instantiation', () => {
-            expect(plymouth.ships).toContain(ship);
+            expect(plymouth.addShip).toHaveBeenCalledWith(ship);
         });
         it('can set sail', () => {
             ship.setSail();
@@ -42,7 +52,7 @@ describe('Ship', () => {
             ship.setSail();
             ship.dock();
             expect(ship.currentPort).toBe(topsham);
-            expect(topsham.ships).toContain(ship);
+            expect(topsham.addShip).toHaveBeenCalledWith(ship);
         });
     });
 });
