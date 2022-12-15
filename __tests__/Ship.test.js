@@ -52,7 +52,7 @@ describe('Ship', () => {
             ship.setSail();
             ship.dock();
             expect(ship.currentPort).toBe(topsham);
-            expect(topsham.addShip).toHaveBeenCalledWith(ship);
+            expect(topsham.addShip).toHaveBeenCalledWith(ship); 
         });
     });
 });
