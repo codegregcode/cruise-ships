@@ -6,6 +6,9 @@ class Ship {
     setSail() {
         this.currentPort = "";
     }
+    dock(port) {
+        this.currentPort = port;
+    }
 }
 
 module.exports = Ship;
