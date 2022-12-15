@@ -15,6 +15,8 @@ describe('Ship', () => {
         const ship = new Ship(itinerary);
         expect(ship.currentPort).toBe(port);
     });
+});
+describe('setSail', () => {
     it('can set sail', () => {
         const port = new Port('Dover');
         const aPort = new Port('Calais');
@@ -31,5 +33,16 @@ describe('Ship', () => {
         ship.setSail();
         ship.dock();
         expect(() => ship.setSail()).toThrowError('End of itinerary reached');
+    });
+});
+describe('dock', () => {
+    it('can dock at another port', () => {
+        const plymouth = new Port('Plymouth');
+        const topsham = new Port('Topsham');
+        const itinerary = new Itinerary([plymouth, topsham]);
+        const ship = new Ship(itinerary);
+        ship.setSail();
+        ship.dock();
+        expect(ship.currentPort).toBe(topsham);
     });
 });
