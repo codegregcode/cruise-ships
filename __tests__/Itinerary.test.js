@@ -1,6 +1,4 @@
 /* global describes it expect */
-const Port = require('../src/Port');
-const Ship = require('../src/Ship');
 const Itinerary = require('../src/Itinerary');
 
 describe('Itinerary', () => {

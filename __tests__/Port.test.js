@@ -1,7 +1,5 @@
 /* global describes it expect */
 const Port = require('../src/Port');
-const Ship = require('../src/Ship');
-const Itinerary = require('../src/Itinerary');
 describe('Port', () => {
     describe('monitors ships in and leaving port', () => {
         let plymouth;
