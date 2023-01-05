@@ -18,5 +18,8 @@
   "homepage": "https://github.com/codegregcode/cruise-ships#readme",
   "devDependencies": {
     "jest": "^29.3.1"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
   }
 }
