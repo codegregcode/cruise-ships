@@ -62,9 +62,14 @@
             const endMsg = `End of the line!`;
             let departMsg = `We are now leaving ${ship.currentPort.name}`; 
 
-            if (!nextPortElement) {
-                return alert('End of the line!');
+            // if (!nextPortElement) {
+            //     return alert('End of the line!');
+            // }
+            if(!nextPortElement) {
+                return this.renderMessage(endMsg)
             }
+
+            this.renderMessage(departMsg); 
 
             const shipElement = document.querySelector('#ship');
             const sailInterval = setInterval(() => {
@@ -77,6 +82,20 @@
 
             shipElement.style.left = `${shipLeft + 1}px`;
             }, 20);
+        }
+
+        renderMessage(message) {
+            const viewPort = document.querySelector('#viewport');
+            const messageDiv = document.createElement('div');
+
+            messageDiv.id = 'message';
+            messageDiv.innerHTML = message;
+
+            viewPort.appendChild(messageDiv);
+
+            window.setTimeout(() => {
+                viewPort.removeChild(messageDiv);
+            }, 2000);
         }
     }
 
