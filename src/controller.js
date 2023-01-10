@@ -58,13 +58,11 @@
             const currentPortIndex = ship.itinerary.ports.indexOf(ship.currentPort);
             const nextPortIndex = currentPortIndex + 1;
             const nextPortElement = document.querySelector(`[data-port-index='${nextPortIndex}']`);
+            let nextPortName = ship.current
 
             const endMsg = `End of the line!`;
             let departMsg = `We are now leaving ${ship.currentPort.name}`; 
 
-            // if (!nextPortElement) {
-            //     return alert('End of the line!');
-            // }
             if(!nextPortElement) {
                 return this.renderMessage(endMsg)
             }
@@ -77,6 +75,7 @@
             if (shipLeft === (nextPortElement.offsetLeft - 32)) {
             ship.setSail();
             ship.dock();
+            this.renderMessage(`We are now arriving in ${ship.currentPort.name}`);
             clearInterval(sailInterval);
             }
 
