@@ -39,6 +39,7 @@
                 const portsElementWidth = parseInt(portsElement.style.width, 10);
                 portsElement.style.width = `${portsElementWidth + 256}px`;
             })
+            this.hud();
         }
 
         renderShip() {
@@ -58,29 +59,26 @@
             const currentPortIndex = ship.itinerary.ports.indexOf(ship.currentPort);
             const nextPortIndex = currentPortIndex + 1;
             const nextPortElement = document.querySelector(`[data-port-index='${nextPortIndex}']`);
-            let nextPortName = ship.current
-
-            const endMsg = `End of the line!`;
-            let departMsg = `We are now leaving ${ship.currentPort.name}`; 
 
             if(!nextPortElement) {
-                return this.renderMessage(endMsg)
+                return this.renderMessage(`End of the line!`)
             }
-
-            this.renderMessage(departMsg); 
+            this.renderMessage(`We are now leaving ${ship.currentPort.name}`); 
 
             const shipElement = document.querySelector('#ship');
             const sailInterval = setInterval(() => {
-            const shipLeft = parseInt(shipElement.style.left, 10);
-            if (shipLeft === (nextPortElement.offsetLeft - 32)) {
-            ship.setSail();
-            ship.dock();
-            this.renderMessage(`We are now arriving in ${ship.currentPort.name}`);
-            clearInterval(sailInterval);
-            }
+                const shipLeft = parseInt(shipElement.style.left, 10);
 
-            shipElement.style.left = `${shipLeft + 1}px`;
-            }, 20);
+                if (shipLeft === (nextPortElement.offsetLeft - 32)) {
+                ship.setSail();
+                ship.dock();
+                this.renderMessage(`We are now arriving in ${ship.currentPort.name}`);
+                this.hud();
+                clearInterval(sailInterval);
+                }
+
+                shipElement.style.left = `${shipLeft + 1}px`;
+                }, 20);
         }
 
         renderMessage(message) {
@@ -95,6 +93,23 @@
             window.setTimeout(() => {
                 viewPort.removeChild(messageDiv);
             }, 2000);
+        }
+
+        hud() {
+            const ship = this.ship;
+            const hudElement = document.querySelector('#hud');
+
+            const currentPortIndex = ship.itinerary.ports.indexOf(ship.currentPort);
+            const nextPortIndex = currentPortIndex + 1;
+
+            if (ship.itinerary.ports.length > 0 && ship.currentPort !== null) {
+            let hudMessage = `Current Port : ${ship.itinerary.ports[currentPortIndex].name}`;
+
+                if (nextPortIndex < ship.itinerary.ports.length) {
+                    hudMessage += `<br>Next Port : ${ship.itinerary.ports[nextPortIndex].name}`;
+                }
+            hudElement.innerHTML = hudMessage;
+            } 
         }
     }
 
