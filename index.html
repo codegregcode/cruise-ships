@@ -15,40 +15,34 @@
     />
   </head>
   <body>
-    <div id="form">
-      <form>
-        <label>Add Port!</label>
-        <br />
-        <input
-          type="text"
-          id="portName"
-          placeholder="Type name of port here!"
-        />
-        <br />
-        <button>Click here to add port!</button>
-      </form>
-    </div>
+    <h1>Cruise Ships</h1>
+    <form id="form">
+      <label>Add Port!</label>
+      <br />
+      <input type="text" id="portName" placeholder="Type name of port here!" />
+      <br />
+      <button type="submit" id="submit-button">Click here to add port!</button>
+    </form>
     <div id="hud"></div>
     <div id="viewport">
       <div id="ports"></div>
       <div id="ship"></div>
       <div id="sailbutton">Set Sail!</div>
     </div>
+    <footer>
+      Created by <a href="mailto:codegregcode@gmail.com">Greg</a>,
+      <a href="https://github.com/codegregcode"
+        ><img src="image/Icons/icons8-github-48.png"
+      /></a>
+      <a href="https://www.linkedin.com/in/greg-cain/"
+        ><img src="image/Icons/icons8-linkedin-48.png"
+      /></a>
+      <p id="bottom-link"><a href="thankyou.html">.</a></p>
+    </footer>
     <script src="src/controller.js"></script>
     <script src="src/Port.js"></script>
     <script src="src/Itinerary.js"></script>
     <script src="src/Ship.js"></script>
-    <script>
-      const port = new Port();
-      const itinerary = new Itinerary([
-        new Port("Topsham"),
-        new Port("Lisbon"),
-        new Port("Tangier"),
-      ]);
-      const ship = new Ship(itinerary);
-      const controller = new Controller(ship);
-      controller.renderPorts(itinerary.ports);
-      controller.renderShip(ship);
-    </script>
+    <script src="src/form.js"></script>
   </body>
 </html>
