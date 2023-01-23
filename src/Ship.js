@@ -4,7 +4,12 @@
             this.itinerary = itinerary;
             this.currentPort = itinerary.ports[0];
             this.previousPort = null;
+            if (itinerary.ports.length > 0) {
+            this.currentPort = itinerary.ports[0];
             this.currentPort.addShip(this);
+            } else {
+            this.currentPort = null;
+        }
         }
 
         setSail() {
