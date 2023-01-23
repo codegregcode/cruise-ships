@@ -1,51 +1,29 @@
-# Cruise ships
+# Cruise Ships
 
-Another project created as part of my studies with [Command Shift](https://github.com/CommandShiftHQ)!
+Acproject created as part of my studies with [Command Shift](https://github.com/CommandShiftHQ)! During this project I learnt how to break down a user story into a domain model, object-oriented programming, dependency injection, as well as learning about mocks and spies in tests.
 
 ## Roadmap
 
 - ~~follow and complete track~~
-- follow and complete GUI track
+- ~~follow and complete GUI track~~
 
 ### Installation & How to use
 
-1. Clone down the repo to your computer
-2. Type the following in your REPL so it knows where to look 👀
+1. Clone this repo
 
-   ```javascript
-   const Itinerary = require("path/to/Itinerary.js");
-   const Port = require("path/to/Port.js");
-   const Ship = require("path/to.Ship.js");
+   ```
+   git clone https://github.com/codegregcode/cruise-ships
    ```
 
-3. Now create some ports/destinations for your cruise ship!
+2. Making sure that you're in the cruise-ships directory, open index.html
 
-   ```javascript
-   const southampton = new Port("Southampton");
-   const newYork = new Port("New York");
-   const barbados = new Port("Barbados");
+   ```
+   open index.html
    ```
 
-4. Add those ports/destinations to the ships itinerary
+3. Here's a quick demonstration on how to use the application:
 
-   ```javascript
-   const shipItinerary = new Itinerary([southampton, newYork, barbados]);
-   ```
-
-5. Add the itinerary and the ship will be ready to sail!
-
-   ```javascript
-   const boatyMcBoatFace = new Ship(shipItinerary);
-   ```
-
-   ![1672932085353](image/README/1672932085353.png)
-
-6. Use setSail() and dock() to sail the ship! See below for how that works ⬇️
-
-   ![1672932230047](image/README/1672932230047.png)
-
-7. If you setSail() from the final port you'll get an error telling you that you've come to the end of the itinerary!
-8. You can have more than one ship in a port so have fun creating lots of different cruise to go on 🚢
+   ![1674505133839](image/README/1674505133839.png)
 
 ## Application dependencies
 
