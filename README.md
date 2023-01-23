@@ -9,6 +9,10 @@ A project created as part of my studies with [Command Shift](https://github.com/
 
 ### Installation & How to use
 
+The easiest way to use the app is to the following website:
+
+`https://codegregcode.github.io/cruise-ships/`
+
 1. Clone this repo
 
    ```
