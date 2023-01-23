@@ -1,6 +1,6 @@
 # Cruise Ships
 
-Acproject created as part of my studies with [Command Shift](https://github.com/CommandShiftHQ)! During this project I learnt how to break down a user story into a domain model, object-oriented programming, dependency injection, as well as learning about mocks and spies in tests.
+A project created as part of my studies with [Command Shift](https://github.com/CommandShiftHQ)! During this project I learnt how to break down a user story into a domain model, object-oriented programming, dependency injection, as well as learning about mocks and spies in tests.
 
 ## Roadmap
 
