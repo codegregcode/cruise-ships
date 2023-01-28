@@ -4,9 +4,9 @@ const controller = new Controller(ship);
 
 controller.renderPorts(itinerary.ports);
 
-const form = document.querySelector('form');
+const form = document.querySelector("form");
 
-form.addEventListener('submit', (click) => {
+form.addEventListener("submit", (click) => {
   click.preventDefault();
 
   new FormData(form);
@@ -17,5 +17,5 @@ form.addEventListener('submit', (click) => {
   if (ship.itinerary.ports.length === 1) {
     controller.renderShip();
     ship.dock();
-    }
+  }
 });
